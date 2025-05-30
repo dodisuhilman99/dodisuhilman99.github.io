@@ -32,7 +32,7 @@ h1 {
 
 .cta-normal {
   text-align: center;
-  margin: 40px 0;
+  margin: 60px 0 80px;
 }
 
 .cta-normal button {
@@ -43,21 +43,26 @@ h1 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .cta-floating {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .cta-floating img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.cta-floating img:hover {
+  transform: scale(1.1);
 }
 
 footer {
