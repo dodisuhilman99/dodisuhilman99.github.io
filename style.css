@@ -1,109 +1,151 @@
+/* ========================================================= */
+/* --- Gaya Dasar (Reset & Elemen HTML Umum) --- */
+/* ========================================================= */
+
 body {
-  font-family: sans-serif;
-  margin: 0;
-  background: #f5f5f5;
+    font-family: sans-serif; /* Mengatur jenis font dasar untuk seluruh teks di body. */
+    margin: 0; /* Menghilangkan margin default yang diberikan browser pada body, memastikan konten mengisi penuh tepi halaman. */
+    background-color: #f5f5f5; /* Mengatur warna latar belakang halaman keseluruhan menjadi abu-abu terang. */
 }
+
+/* ========================================================= */
+/* --- Gaya Header & Navigasi --- */
+/* ========================================================= */
 
 header {
-  background: #2e7d32;
-  color: white;
-  padding: 20px;
-  text-align: center;
+    background-color: #388e3c; /* Warna latar belakang header (hijau tua yang konsisten dengan tema herbal). */
+    color: white; /* Warna teks di dalam header (misalnya, teks paragraf jika ada). */
+    padding: 20px; /* Padding di sekitar konten header (20px di semua sisi) untuk memberikan ruang bernapas. */
+    text-align: center; /* Memusatkan semua konten inline (seperti teks dan gambar logo jika tanpa `display: block;`) di dalam header. */
 }
 
-h1 {
-  margin: 0;
+/* Gaya untuk logo gambar di header */
+.header-logo {
+    max-width: 200px; /* Lebar maksimum logo adalah 200 piksel. Gambar tidak akan melebihi lebar ini, mencegahnya terlalu besar. */
+    height: auto; /* Tinggi gambar akan disesuaikan secara otomatis untuk menjaga rasio aspek (proporsi) tetap utuh, mencegah gambar terlihat gepeng. */
+    display: block; /* Mengubah elemen gambar dari inline menjadi blok. Ini penting agar `margin: auto;` bisa bekerja untuk pemusatan. */
+    margin: 20px auto 10px auto; /* Memberikan margin 20px di atas, 10px di bawah, dan secara otomatis memusatkan gambar secara horizontal. */
 }
 
-/* Gaya untuk navigasi */
+/* Gaya untuk elemen navigasi (menu link) */
 nav {
-    margin-top: 20px;
+    margin-top: 20px; /* Memberikan jarak 20px di atas elemen navigasi dari elemen sebelumnya di header. */
 }
 
+/* Gaya untuk setiap link di dalam navigasi */
 nav a {
-    color: white; /* Warna teks link */
-    text-decoration: none; /* Menghilangkan garis bawah default */
-    padding: 0 10px; /* Jarak antar link */
-    font-weight: bold;
+    color: white; /* Warna teks link navigasi (putih). */
+    text-decoration: none; /* Menghilangkan garis bawah default pada link. */
+    padding: 0 10px; /* Padding horizontal (kiri-kanan) 10px untuk setiap link, dan 0px di atas-bawah untuk sedikit jarak antar link. */
+    font-weight: bold; /* Membuat teks link menjadi tebal agar lebih menonjol. */
 }
 
+/* Efek saat kursor mouse berada di atas link navigasi */
 nav a:hover {
-    text-decoration: underline; /* Garis bawah saat di-hover */
+    text-decoration: underline; /* Menampilkan garis bawah saat link navigasi di-hover (disorot mouse), memberikan umpan balik visual. */
 }
 
-/* Gaya untuk konten utama halaman */
-main.content {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-main.content h1 {
-    color: #388e3c; /* Warna hijau untuk judul */
-    margin-bottom: 15px;
-}
-main.content p {
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
+/* ========================================================= */
+/* --- Gaya Konten Utama (Gallery & Halaman Lain) --- */
+/* ========================================================= */
 
-
+/* Gaya untuk wadah galeri gambar produk */
 .gallery {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 600px;
-  margin: 0 auto;
+    padding: 20px; /* Padding di sekitar area galeri. */
+    display: flex; /* Menggunakan Flexbox untuk tata letak elemen di dalamnya, memungkinkan kontrol yang mudah. */
+    flex-direction: column; /* Mengatur item Flexbox dalam satu kolom (vertikal), sehingga gambar tersusun ke bawah. */
+    gap: 16px; /* Memberikan jarak (gap) 16 piksel antara setiap gambar di galeri. */
+    max-width: 600px; /* Lebar maksimum galeri adalah 600 piksel, menjaga konten tetap rapi. */
+    margin: 0 auto; /* Margin 0 di atas-bawah, dan auto di kiri-kanan untuk memusatkan galeri secara horizontal. */
 }
 
+/* Gaya untuk setiap gambar di dalam galeri */
 .gallery img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%; /* Setiap gambar akan mengambil 100% dari lebar parent-nya (.gallery), membuat gambar responsif. */
+    border-radius: 8px; /* Sudut membulat pada setiap gambar, memberikan tampilan yang lebih lembut. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Efek bayangan tipis pada setiap gambar, memberikan kedalaman. */
 }
 
+/* Gaya untuk konten utama pada halaman seperti "Tentang Kami" (jika menggunakan class="content") */
+main.content {
+    padding: 20px; /* Padding di sekitar konten utama. */
+    max-width: 800px; /* Lebar maksimum area konten utama. */
+    margin: 20px auto; /* Margin 20px di atas-bawah, dan auto di kiri-kanan untuk memusatkan. */
+    background-color: #fff; /* Warna latar belakang area konten utama (putih). */
+    border-radius: 8px; /* Sudut membulat pada area konten utama. */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Efek bayangan tipis pada area konten utama. */
+}
+
+/* Gaya untuk judul h1 di dalam main.content */
+main.content h1 {
+    color: #388e3c; /* Warna hijau gelap untuk judul h1. */
+    margin-bottom: 15px; /* Jarak di bawah judul h1. */
+}
+
+/* Gaya untuk paragraf di dalam main.content */
+main.content p {
+    line-height: 1.6; /* Tinggi baris untuk paragraf, membuat teks lebih mudah dibaca. */
+    margin-bottom: 10px; /* Jarak di bawah setiap paragraf. */
+}
+
+/* ========================================================= */
+/* --- Gaya Tombol CTA (Call To Action) --- */
+/* ========================================================= */
+
+/* Gaya untuk wadah tombol CTA standar */
 .cta-normal {
-  text-align: center;
-  margin: 60px 0 80px;
-  margin-top: 0px
+    text-align: center; /* Memusatkan tombol di dalam wadah. */
+    margin: 0 0 80px; /* Margin 0px di atas, 0px di kiri/kanan, dan 80px di bawah. */
 }
 
+/* Gaya untuk elemen <button> di dalam .cta-normal */
 .cta-normal button {
-  background: #25d366;
-  color: white;
-  padding: 14px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #25d366; /* Warna latar belakang tombol (hijau khas WhatsApp). */
+    color: white; /* Warna teks tombol. */
+    padding: 14px 24px; /* Padding di dalam tombol, membuat area klik lebih nyaman. */
+    font-size: 16px; /* Ukuran font teks tombol. */
+    border: none; /* Menghilangkan border default tombol. */
+    border-radius: 8px; /* Sudut membulat pada tombol. */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat di atas tombol, menandakan bisa diklik. */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Efek bayangan pada tombol, memberikan kesan "terangkat". */
+    transition: background-color 0.3s ease; /* Transisi halus untuk warna latar belakang saat di-hover. */
 }
 
+/* Efek saat kursor mouse berada di atas tombol CTA normal */
+.cta-normal button:hover {
+    background-color: #1da851; /* Warna latar belakang sedikit lebih gelap saat di-hover. */
+}
+
+/* Gaya untuk tombol CTA melayang (floating) */
 .cta-floating {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+    position: fixed; /* Membuat elemen tetap di posisi layar, bahkan saat halaman di-scroll. */
+    bottom: 20px; /* Jarak 20px dari tepi bawah viewport (layar). */
+    right: 20px; /* Jarak 20px dari tepi kanan viewport (layar). */
+    z-index: 1000; /* Memastikan tombol ini selalu berada di atas elemen lain (lapisan teratas). */
 }
 
+/* Gaya untuk ikon gambar di dalam tombol CTA melayang */
 .cta-floating img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
+    width: 50px; /* Lebar ikon WhatsApp. */
+    height: 50px; /* Tinggi ikon WhatsApp. */
+    border-radius: 50%; /* Membuat ikon menjadi lingkaran. */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* Efek bayangan pada ikon. */
+    transition: transform 0.2s ease; /* Transisi halus untuk efek pembesaran saat di-hover. */
 }
 
+/* Efek saat kursor mouse berada di atas ikon CTA melayang */
 .cta-floating img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1); /* Memperbesar ikon sedikit saat di-hover, memberikan animasi. */
 }
+
+/* ========================================================= */
+/* --- Gaya Footer --- */
+/* ========================================================= */
 
 footer {
-  background: #ddd;
-  text-align: center;
-  padding: 12px;
-  font-size: 14px;
+    background-color: #ddd; /* Warna latar belakang footer (abu-abu muda). */
+    text-align: center; /* Memusatkan teks di footer. */
+    padding: 12px; /* Padding di sekitar konten footer. */
+    font-size: 14px; /* Ukuran font teks di footer. */
+    margin-top: 40px; /* Memberikan jarak dari konten di atasnya. */
 }
