@@ -46,7 +46,9 @@ main.content h1 {
 }
 main.content p {
     line-height: 1.6;
-    margin-bott
+    margin-bottom: 10px;
+}
+
 
 .gallery {
   padding: 20px;
