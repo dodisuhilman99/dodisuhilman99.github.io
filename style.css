@@ -118,24 +118,41 @@ main.content p {
 
 /* Gaya untuk tombol CTA melayang (floating) */
 .cta-floating {
-    position: fixed; /* Membuat elemen tetap di posisi layar, bahkan saat halaman di-scroll. */
-    bottom: 20px; /* Jarak 20px dari tepi bawah viewport (layar). */
-    right: 20px; /* Jarak 20px dari tepi kanan viewport (layar). */
-    z-index: 1000; /* Memastikan tombol ini selalu berada di atas elemen lain (lapisan teratas). */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.cta-floating:hover {
+    transform: scale(1.05);
 }
 
 /* Gaya untuk ikon gambar di dalam tombol CTA melayang */
 .cta-floating img {
-    width: 50px; /* Lebar ikon WhatsApp. */
-    height: 50px; /* Tinggi ikon WhatsApp. */
-    border-radius: 50%; /* Membuat ikon menjadi lingkaran. */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* Efek bayangan pada ikon. */
-    transition: transform 0.2s ease; /* Transisi halus untuk efek pembesaran saat di-hover. */
+    width: 24px;
+    height: 24px;
 }
 
 /* Efek saat kursor mouse berada di atas ikon CTA melayang */
 .cta-floating img:hover {
     transform: scale(1.1); /* Memperbesar ikon sedikit saat di-hover, memberikan animasi. */
+}
+
+.cta-floating span {
+    color: #25D366;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
 }
 
 /* ========================================================= */
